@@ -17,6 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true  # Add this line to update submodules
 
       - name: Set up Node.js version
         uses: actions/setup-node@v3
@@ -66,5 +68,5 @@ jobs:
         with:
           app-name: 'tech0-gen-9-step3-1-node-33'
           slot-name: 'Production'
-          package: .
+          package: ./deploy
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D474A4592054E5AA100CB304021EEEA }}
